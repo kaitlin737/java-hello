@@ -223,4 +223,10 @@ void testString(){
    println(hw);
    
 }
+//void testClock(){
+  //  Clock clock = test(new Clock());
+//}
+//void testTimezoneClock() {
+  //  TimezoneClock tzClock = testAlways(new TimezoneClock()); 
+//}
 }
