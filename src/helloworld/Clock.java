@@ -56,4 +56,41 @@ public class Clock {
         assert abs(now - shouldBe) < 0.1/3600.0; 
         
     }
+    //overload
+    public boolean equals (Clock clock)
+    {
+        return getHours () == clock.getHours(); 
+    }
+    @Override
+    public boolean equals(Object object){
+        if (object instanceof Clock){
+            return equals ((Clock) object);
+        }else{
+            return false;
+        }        
+    }
+    
+    void testEquals(){
+        Clock clock1 = new Clock();
+        Clock clock2 = clock1;
+        Clock clock3 = new Clock();
+        
+        clock1.setHours(1.00);
+        clock3.setHours(1.00);
+        assert clock2.getHours() == 1.00;
+        assert clock1.equals(clock2) == true;
+        assert (clock1==clock2) == true;
+        assert clock1.equals(clock3)==true;
+        assert (clock1 == clock3)==false;
+    }
+    
+
+    public int compareTo(Clock clock){
+        double delta = getHours ()-clock.getHours();
+        if (delta < 0) return -1;
+        if (delta == 0) return 0;
+        return 1;
+    }
+    
+    
 }

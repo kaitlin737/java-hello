@@ -12,13 +12,39 @@ import static kiss.API.pause;
  *
  * @author kcstark
  */
+
+enum Timezone {
+    MST,
+    MDT,
+    UTC
+};
 public class TimezoneClock extends Clock {
+    TimezoneClock (Timezone tz){
+        setTimezone(tz);
+    }
+    
+    TimezoneClock(){
+        this.setTimezone(Timezone.UTC);
+    }
     double timezoneShift=0.0;
     @Override
     double getHours(){
         return 0;
     }
+    void setTimezone(Timezone tz){
+        super.setHours(time()/3600);
+        super.start();
+        switch(tz){
+            case MST : timezoneShift = -7*3600;break;
+            case UTC : timezoneShift = 0*3600;break;
+        }
+    }
     
+    double mod(double a,double b){
+        double u = a/b;
+        return b*(u-Math.floor(u));
+    }
+   
     void testGetTime() {
         Clock clock = new TimezoneClock();
         double hours= clock.getHours();
@@ -42,4 +68,5 @@ public class TimezoneClock extends Clock {
         assert abs(now - shouldBe) < 0.1/3600.0; 
         
     }
+    
 }
