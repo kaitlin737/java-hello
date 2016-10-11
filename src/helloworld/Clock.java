@@ -91,6 +91,19 @@ public class Clock {
         if (delta == 0) return 0;
         return 1;
     }
-    
-    
+    @Override
+    public String toString(){
+    return String.format("%02d:%02d", (int) getHours(), (int) getMinutes());            
+            }
+    void testSortClocks(){
+        ArrayList<Clock> clocks = new ArrayList<Clock>();
+        clocks.add(new Clock(1));
+        clocks.add(new Clock(1,30));
+        clocks.add(new Clock(2));
+        clocks.add(new Clock (1,15));
+        clocks.sort(null);
+        for(Clock clock : clocks) {
+            println(clock);
+        }
+    }
 }
