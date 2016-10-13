@@ -46,10 +46,14 @@ public class Javacollections {
         System.out.println("Added grade at index 1");
         System.out.println(grades); 
         grades.sort((a,b)->-a.compareTo(b));
+        try(Close out=outExpect(89,87,67,65)){
         System.out.println("Sorted list of grades,largest to smallest");
+        }
         System.out.println(grades);
         grades.sort((b,a)->-a.compareTo(b));
+        try(Close out=outExpect(65,67,87,89)){
         System.out.println("Sorted list of grades, smallest to largest");
+        }
         System.out.println(grades);
     }
 }
