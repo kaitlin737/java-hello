@@ -25,7 +25,6 @@ public class Javacollections {
         name.add("Jacob");
         assert(name.size()==4);
         System.out.println(name);
-        
         ArrayList<Integer> grades =new ArrayList();
         grades.add(65);
         grades.add(92);
