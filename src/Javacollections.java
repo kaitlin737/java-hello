@@ -26,5 +26,30 @@ public class Javacollections {
         name.add("Jacob");
         assert(name.size()==4);
         System.out.println(name);
+        
+        ArrayList<Integer> grades =new ArrayList();
+       grades.add(65);
+       grades.add(92);
+       grades.add(87);
+       grades.add(67);
+       assert(grades.size()==4);
+       Iterator<Integer> i =grades.iterator();
+       while(i.hasNext()){
+           Integer grade = i.next();
+           System.out.println(grade);
+       }
+       grades.remove(1);
+       assert grades.contains(92)==false;
+       System.out.println("After removing element 92");
+       System.out.println(grades);
+       grades.add(1,89);
+       System.out.println("Added grade at index 1");
+       System.out.println(grades); 
+       grades.sort((a,b)->-a.compareTo(b));
+       System.out.println("Sorted list of grades,largest to smallest");
+       System.out.println(grades);
+       grades.sort((b,a)->-a.compareTo(b));
+       System.out.println("Sorted list of grades, smallest to largest");
+       System.out.println(grades);
     }
 }
