@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import kiss.API.Close;
+import static kiss.API.EOL;
 import static kiss.API.outExpect;
 
 public class Assignment3 {
@@ -10,9 +11,8 @@ public class Assignment3 {
        int sum=0;
        int average=0;
       if(grades.size() == 0) 
-        { 
-            System.out.println("Cannot divide by zero");
-            throw  new ArithmeticException();
+        {
+            throw  new ArithmeticException("Cannot divide by zero");
         }
         for (int i=0;i<grades.size();++i)
         {
@@ -20,9 +20,7 @@ public class Assignment3 {
         }
         average=sum/grades.size();
         return average;
-   }     
-         
-    
+   }             
     public static void main(String[] args){
         
        ArrayList<String> name = new ArrayList();
@@ -52,32 +50,31 @@ public class Assignment3 {
        Iterator<Integer> i = grades.iterator();
        while (i.hasNext()){
        Integer grade = i.next();
-       //try(Close out = outExpect(65,EOL,92,EOL,87,EOL,67)){
-       System.out.println(grade);  
-      }
-       
+       try(Close out = outExpect(65,EOL,92,EOL,87,EOL,67)){
+       System.out.println(grade);}  
+      } 
    grades.remove(1);
    assert(grades.size()==3);
    assert grades.contains(92)==false;
    System.out.println("After removing element 92");
    try(Close out = outExpect(65,87,67)){
-   System.out.println(grades);
+   System.out.println(grades);}
    grades.add(1,89);
    assert(grades.size()==4);
    assert(grades.contains(89)==true);
    System.out.println("Added grade at index 1");
-   //try(Close out = outExpect(65,89,87,67)){
-   System.out.println(grades);
+   try(Close out = outExpect(65,89,87,67)){
+   System.out.println(grades);}
    grades.sort((a,b)->-a.compareTo(b));
-   //try(Close out = outExpect(89,87,67,65)){
+   try(Close out = outExpect(89,87,67,65)){
    System.out.println("Sorted list of grades,largest to smallest");
-   System.out.println(grades);
+   System.out.println(grades);}
    grades.sort((b,a)->-a.compareTo(b));
-   //try(Close out = outExpect(65,67,87,89)){
+   try(Close out = outExpect(65,67,87,89)){
    System.out.println("Sorted list of grades, smallest to largest");
-   System.out.println(grades);    
+   System.out.println(grades);}    
    System.out.println("The average test score was");
-   //try(Close out = outExpect(77)){
+   try(Close out = outExpect(77)){
    System.out.println(findaverage(grades));
     }
 }
