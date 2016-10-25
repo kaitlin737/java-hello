@@ -12,7 +12,7 @@ public class Assignment3 {
        int average=0;
       if(grades.size() == 0) 
         {
-            throw  new ArithmeticException("Cannot divide by zero");
+            throw new ArithmeticException("Cannot divide by zero");
         }
         for (int i=0;i<grades.size();++i)
         {
