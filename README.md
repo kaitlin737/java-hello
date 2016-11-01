@@ -7,3 +7,8 @@ Assignment 2
 Javacollections.java
 
 https://github.com/kaitlin737/java-hello/tree/Project2/src
+
+Assignment 3
+
+Assignment3.java
+
