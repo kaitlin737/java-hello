@@ -1,26 +1,6 @@
 package helloworld;
 
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author kcstark
- */
-//use junit 
-/* 
-private-same class only
-nothing- any class in the same package
-protected any class in the same package + any derived class
-public-anybody has access
-
-*/
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
@@ -41,8 +21,7 @@ import java.util.Iterator;
         }
         average=sum/grades.size();
         return average;
-   }     
-         
+   }      
     
     public static void main(String[] args){
         
@@ -71,8 +50,7 @@ import java.util.Iterator;
        Iterator<Integer> i = grades.iterator();
        while (i.hasNext()){
        Integer grade = i.next();
-       System.out.println(grade);  
-       
+       System.out.println(grade);   
    grades.remove(1);
    assert(grades.size()==3);
    assert grades.contains(92)==false;
