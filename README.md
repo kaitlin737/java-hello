@@ -11,8 +11,7 @@ https://github.com/kaitlin737/java-hello/tree/Project2/src
 Assignment 3
 
 Assignment3.java
-
-https://github.com/kaitlin737/java-hello/tree/Assignment3/src
+https://github.com/kaitlin737/java-hello/blob/Assignment3/src/helloworld/assignment3.java
 
 Assignment 4
 
