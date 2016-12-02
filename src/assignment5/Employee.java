@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package assignment5;
 import assignment5.duty;
 import static kiss.API.*;
-/**
- *
- * @author kcstark
- */
+
 public class Employee {
    String name;
    duty duty;
