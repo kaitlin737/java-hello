@@ -41,7 +41,6 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{
         timer.start();
     }
     
-    
     public void paint(Graphics g){
         //background
         g.setColor(Color.black);
